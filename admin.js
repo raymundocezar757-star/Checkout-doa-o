@@ -198,6 +198,16 @@
         el.value = settings[f] || '';
       }
     });
+
+    // Handle card_enabled toggle
+    const cardToggle = document.getElementById('card_enabled');
+    const cardStatus = document.getElementById('card-toggle-status');
+    const isEnabled = settings['card_enabled'] === 'true' || settings['card_enabled'] === true;
+    if (cardToggle) cardToggle.checked = isEnabled;
+    if (cardStatus) {
+      cardStatus.textContent = isEnabled ? 'Ativado' : 'Desativado';
+      cardStatus.className = 'toggle-status ' + (isEnabled ? 'on' : 'off');
+    }
   }
 
   // Attach recovery events
@@ -280,6 +290,10 @@
           settingsData[f] = el.value.trim();
         }
       });
+
+      // Save card toggle
+      const cardToggle = document.getElementById('card_enabled');
+      settingsData['card_enabled'] = cardToggle ? String(cardToggle.checked) : 'false';
 
       try {
         const resp = await fetch(API_URL, {
@@ -409,6 +423,17 @@
     } else {
       showLogin();
     }
+  }
+
+  // Toggle switch live feedback
+  const cardToggleEl = document.getElementById('card_enabled');
+  const cardStatusEl = document.getElementById('card-toggle-status');
+  if (cardToggleEl && cardStatusEl) {
+    cardToggleEl.addEventListener('change', () => {
+      const on = cardToggleEl.checked;
+      cardStatusEl.textContent = on ? 'Ativado' : 'Desativado';
+      cardStatusEl.className = 'toggle-status ' + (on ? 'on' : 'off');
+    });
   }
 
   init();

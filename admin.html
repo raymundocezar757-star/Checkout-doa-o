@@ -308,6 +308,83 @@
       gap: 25px;
     }
 
+    /* Toggle Switch */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 25px;
+    }
+
+    .toggle-info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .toggle-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background: #ccc;
+      border-radius: 28px;
+      transition: 0.3s;
+    }
+
+    .toggle-slider:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 4px;
+      bottom: 4px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .toggle-switch input:checked + .toggle-slider {
+      background: var(--success);
+    }
+
+    .toggle-switch input:checked + .toggle-slider:before {
+      transform: translateX(24px);
+    }
+
+    .toggle-status {
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .toggle-status.on { color: var(--success); }
+    .toggle-status.off { color: var(--text-muted); }
+
     .form-group {
       display: flex;
       flex-direction: column;
@@ -443,6 +520,21 @@
           <h2 class="tab-title">Configurações Gerais</h2>
           
           <div id="save-alert" class="save-alert">Configurações salvas com sucesso!</div>
+
+          <!-- Toggle Cartão de Crédito -->
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <h4>💳 Opção de Cartão de Crédito</h4>
+              <p>Ativa ou desativa a opção de pagar com cartão de crédito na página de doação.</p>
+            </div>
+            <div style="text-align: center;">
+              <label class="toggle-switch">
+                <input type="checkbox" id="card_enabled">
+                <span class="toggle-slider"></span>
+              </label>
+              <div class="toggle-status off" id="card-toggle-status">Desativado</div>
+            </div>
+          </div>
 
           <form id="settings-form">
             <div class="settings-grid">

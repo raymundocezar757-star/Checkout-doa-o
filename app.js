@@ -709,7 +709,7 @@
     UTM.extract();
     Events.setup();
     
-    // Dynamic settings loading (e.g. Facebook Pixel)
+    // Dynamic settings loading (e.g. Facebook Pixel, card_enabled)
     try {
       const resp = await fetch(SETUP.configUrl);
       if (resp.ok) {
@@ -717,6 +717,18 @@
         if (config.fb_pixel_id) {
           SYS.pixelId = config.fb_pixel_id;
           loadFBPixel(config.fb_pixel_id);
+        }
+
+        // Show or hide credit card payment option based on admin setting
+        const cardSection = document.querySelector('.payment-method-toggle');
+        if (cardSection) {
+          cardSection.style.display = config.card_enabled ? 'block' : 'none';
+        }
+
+        // Also hide via label-card directly if needed
+        const lblCard = document.getElementById('label-card');
+        if (lblCard) {
+          lblCard.style.display = config.card_enabled ? '' : 'none';
         }
       }
     } catch (e) {
