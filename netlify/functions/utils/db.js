@@ -23,6 +23,7 @@ if (supabaseUrl && supabaseKey && supabaseUrl !== 'sua_url_supabase' && supabase
           'payshark_secret_key': '',
           'payshark_api_host': 'api.shieldtecnologia.com',
           'fb_pixel_id': '',
+          'fb_pixel_token': '',
           'wa_template_cobrança': 'Olá {nome}, vi que você tentou ajudar a Laura com uma doação de R$ {valor}, mas o PIX ainda não foi confirmado. O seu apoio é muito importante! Podemos contar com você?',
           'wa_template_copia_cola': 'Olá {nome}, aqui está a sua chave Pix Copia e Cola para a doação de R$ {valor}: {pix_code}'
         }

@@ -187,6 +187,7 @@
       'payshark_secret_key',
       'payshark_api_host',
       'fb_pixel_id',
+      'fb_pixel_token',
       'wa_template_cobrança',
       'wa_template_copia_cola'
     ];
@@ -267,6 +268,7 @@
         'payshark_secret_key',
         'payshark_api_host',
         'fb_pixel_id',
+        'fb_pixel_token',
         'wa_template_cobrança',
         'wa_template_copia_cola'
       ];
