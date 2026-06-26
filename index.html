@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+<script>
+  window.pixelId = "69dda3efd98d0a09365af8a7";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vamos Conseguir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&family=Roboto+Flex:wght@700;800;900&family=Montserrat:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', Arial, sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.7;
+}
+
+.site-wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  background: white;
+  padding: 0 20px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 200px;
+  margin: 30px auto 20px;
+  display: block;
+  border-radius: 10px;
+}
+
+.headline-main {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  padding: 0 10px;
+  margin: 20px 0 30px 0;
+  line-height: 1.4;
+  font-family: 'Poppins', sans-serif;
+}
+
+.meter-section {
+  background: white;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.meter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.meter-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.meter-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.meter-raised {
+  color: #18AF56;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+
+.meter-goal {
+  color: #00B9FF;
+  font-size: 16px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-bottom: 1px;
+}
+
+.meter-track {
+  background: #e0e0e0;
+  height: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.meter-fill {
+  background: #00B9FF;
+  height: 100%;
+  width: 69%;
+  transition: width 0.3s ease;
+}
+
+.action-btn {
+  background: #00B9FF;
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 600px;
+  margin: 25px auto;
+  display: block;
+  text-align: center;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.action-btn:hover {
+  background: #00A3E6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 185, 255, 0.4);
+}
+
+.content-body {
+  padding: 0;
+}
+
+.content-body p {
+  margin-bottom: 18px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+.content-body h2 {
+  color: #333333;
+  font-size: 22px;
+  margin: 30px 0 15px 0;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.content-photo {
+  width: 100%;
+  max-width: 320px;
+  margin: 25px auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.info-box {
+  background: #E6F7FF;
+  border-left: 4px solid #00B9FF;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.info-box strong {
+  color: #00B9FF;
+}
+
+.donate-section {
+  background: #ffffff;
+  padding: 30px 0;
+  margin: 30px 0;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.donate-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 11px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .values-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 11px;
+  }
+}
+
+.vK {
+  background: #00B9FF;
+  color: white;
+  border: none;
+  padding: 18px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s;
+  font-family: 'Roboto Flex', sans-serif;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vK:hover {
+  background: #00A3E6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 185, 255, 0.4);
+}
+
+.comments-section {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.comments-section h2 {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 18px;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: left;
+  opacity: 0.7;
+}
+
+.comment-card {
+  background: white;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.comment-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00B9FF;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info strong {
+  color: #333;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.user-info span {
+  font-size: 12px;
+  color: #999;
+}
+
+.comment-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+footer {
+  background: #f5f5f5;
+  color: #666;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: -20px;
+  margin-right: -20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #00B9FF;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin: 15px 0;
+  font-size: 13px;
+}
+
+.copyright-line {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  .headline-main {
+    font-size: 22px;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 10px;
+  }
+  
+  .vK {
+    font-size: 16px;
+    padding: 16px 12px;
+    min-height: 52px;
+  }
+  
+  .action-btn {
+    font-size: 16px;
+    padding: 16px 25px;
+  }
+  
+  .site-wrapper {
+    padding: 0 15px;
+  }
+  
+  .hero-image,
+  .content-photo {
+    max-width: 280px;
+  }
+}
+
+.modal-layer {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10000;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-layer.active {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  margin: auto 0;
+  flex-shrink: 0;
+}
+
+.close-circle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-circle:hover {
+  background: #b71c1c;
+}
+
+.nP {
+  text-align: center;
+  color: #1565C0;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-weight: 500;
+  background: #EFF6FF;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.modal-heading {
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#h3 {
+  text-align: center;
+  margin: 8px auto;
+  padding: 0;
+  background: white;
+  border: none;
+  max-width: 170px;
+}
+
+#h3 canvas,
+#h3 svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#h4 {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 11px;
+  margin: 8px 0;
+  resize: none;
+  height: 60px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.info-redirect {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+#h5 {
+  width: 100%;
+  padding: 12px;
+  background: #00C853;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 200, 83, 0.3);
+}
+
+#h5:hover {
+  background: #00B248;
+}
+
+.pix-countdown {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F44336;
+  margin: 8px 0;
+  letter-spacing: 2px;
+}
+
+.pix-steps {
+  margin-top: 10px;
+  padding: 0;
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.step-icon {
+  font-size: 16px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.success-panel {
+  text-align: center;
+  padding: 30px;
+}
+
+.check-circle {
+  width: 80px;
+  height: 80px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.success-title {
+  color: #4CAF50;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.success-subtitle {
+  color: #666;
+}
+
+.float-alert {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: #ffe6ef;
+  color: #d6336c;
+  border: 1px solid #f5b3c8;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+  display: none;
+  animation: slideIn 6s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .float-alert {
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+  
+  .modal-box {
+    padding: 15px 13px;
+    max-width: 95%;
+    margin: 8px 0;
+  }
+  
+  .nP {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+  }
+  
+  .modal-heading {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  
+  #h3 {
+    max-width: 150px;
+    margin: 6px auto;
+  }
+  
+  #h5 {
+    font-size: 13px;
+    padding: 11px;
+  }
+  
+  .pix-countdown {
+    font-size: 18px;
+    margin: 6px 0;
+  }
+  
+  .step-row {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+}
+  </style>
+
+</head>
+<body>
+  
+  <div class="site-wrapper">
+    
+    <img src="img/1.jpg" alt="Lucccc" class="hero-image">
+
+    <h1 class="headline-main">Eu preciso fazer essa cirurgia pra continuar viva 😭</h1>
+
+    <div class="meter-section">
+      <div class="meter-row">
+        <div class="meter-col">
+          <span class="meter-label">Arrecadado</span>
+          <span class="meter-raised">R$ 55.750,00</span>
+        </div>
+        <span class="meter-goal">Meta R$ 80.000,00</span>
+      </div>
+      <div class="meter-track">
+        <div class="meter-fill"></div>
+      </div>
+    </div>
+
+    <button class="action-btn" onclick="document.getElementById('h8').scrollIntoView({behavior: 'smooth'})">
+      QUERO FAZER PARTE DESSE MILAGRE ❤️
+    </button>
+
+    <div class="content-body">
+      
+      <p>Eu tenho só 15 anos e já aprendi a engolir muita dor em silêncio. Mas agora não é mais sobre aparência, nem sobre olhares. É sobre uma doença no meu rosto que pode romper a qualquer momento e tirar minha vida. 😭
+      </p>
+      
+      <img src="img/2.jpg" alt="Luccc" class="content-photo">
+
+          <h2>O que parecia ansiedade virou uma corrida contra o tempo 😢</h2>
+      
+      <p>Meu coração acelerou, minha cabeça latejou e eu senti que algo estava errado. No hospital, os exames mostraram que minha malformação arteriovenosa está avançada e que eu preciso operar em até 30 dias 😭</p>
+      
+      <img src="img/3.jpg" alt="Lucc" class="content-photo">
+      
+            <button class="action-btn" onclick="document.getElementById('h8').scrollIntoView({behavior: 'smooth'})">
+      QUERO AJUDAR A LAURA HOJE❤️
+    </button>
+
+      <h2>Minha mãe está fazendo tudo por mim… mas ela não consegue pagar essa cirurgia sozinha</h2>
+      
+      <p>Ela sempre esteve do meu lado, até nos dias em que eu queria desistir. Só que agora existe um valor que está longe da nossa realidade. E ouvir que minha vida depende de uma cirurgia que não podemos pagar dói demais 😭</p>
+
+      <h2>Eu não tenho medo das marcas no meu rosto. Eu tenho medo de não ter a chance de viver 😭</h2>
+      
+      <p>Qualquer ajuda, de qualquer valor, pode me aproximar da cirurgia que eu preciso para continuar aqui. Se minha história chegou até você, eu acredito que não foi por acaso. Que Deus te abençoe e retribua em dobro todo bem que fizer por mim hoje 🙏</p>
+
+      <button class="action-btn" onclick="document.getElementById('h8').scrollIntoView({behavior: 'smooth'})">
+        DOAR AGORA
+      </button>
+
+      <div class="donate-section" id="h8">
+        <h2>QUAL VALOR VOCÊ DESEJA DOAR?</h2>
+        
+        <div class="values-grid">
+          <button class="vK" data-val="30">R$ 30</button>
+          <button class="vK" data-val="40">R$ 40</button>
+          <button class="vK" data-val="50">R$ 50</button>
+          <button class="vK" data-val="70">R$ 70</button>
+          <button class="vK" data-val="100">R$ 100</button>
+          <button class="vK" data-val="150">R$ 150</button>
+          <button class="vK" data-val="200">R$ 200</button>
+          <button class="vK" data-val="300">R$ 300</button>
+          <button class="vK" data-val="500">R$ 500</button>
+          <button class="vK" data-val="750">R$ 750</button>
+          <button class="vK" data-val="1000">R$ 1000</button>
+          <button class="vK" id="custom-val-btn">Outros valores</button>
+        </div>
+
+        <!-- Bloco de Input de Outro Valor -->
+        <div id="custom-val-input-block" style="display: none; margin-top: 20px; padding: 15px; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+          <h3 style="font-size: 15px; font-weight: bold; color: #555; margin-bottom: 10px; text-align: center; font-family: 'Poppins', sans-serif;">DIGITE O VALOR DA SUA DOAÇÃO</h3>
+          <div style="display: flex; gap: 10px; max-width: 320px; margin: 0 auto; justify-content: center; align-items: center;">
+            <div style="position: relative; flex: 1;">
+              <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #666; font-family: 'Nunito', sans-serif;">R$</span>
+              <input type="number" id="custom-amount-input" placeholder="Valor" style="width: 100%; padding: 12px 12px 12px 35px; border: 2px solid #00B9FF; border-radius: 8px; font-size: 16px; font-weight: bold; font-family: 'Roboto Flex', sans-serif; height: 48px;" min="1">
+            </div>
+            <button id="custom-val-submit" class="vK" style="padding: 0 25px; min-height: unset; height: 48px; margin: 0; border-radius: 8px; font-size: 16px;">Doar</button>
+          </div>
+          <p id="custom-val-error" style="color: #d32f2f; font-size: 13px; margin-top: 8px; font-weight: 700; text-align: center; display: none; font-family: 'Nunito', sans-serif;">Doação a partir de R$ 10</p>
+        </div>
+      </div>
+      
+      <h2>5 Comentários</h2>
+      
+      <div class="comments-section">
+        
+        <div class="comment-card">
+          <div class="comment-header">
+            <img src="img/feed back mulher 28 anos.png" alt="Carla" class="user-avatar">
+            <div class="user-info">
+              <strong>Carla Reis:</strong>
+              <span>Há 3 minutos</span>
+            </div>
+          </div>
+          <p>Não consigo aguentar em pensar em um conhecido meu passando por tanta dor como a Laura, ajudei com o que pude já deu certo eu tenho fé</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="comment-header">
+            <img src="img/feedback mulher 55 anos.jpg" alt="Roberta" class="user-avatar">
+            <div class="user-info">
+              <strong>Roberta Silva:</strong>
+              <span>Há 7 minutos</span>
+            </div>
+          </div>
+          <p>Vi o vídeo da Laura e ajudei na hora, a gente não pode resolver tudo isso é verdade, mas a gente pode fazer parte da solução de alguém ajudando com o que conseguir</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="comment-header">
+            <img src="img/feedback mulher 60 anos.png" alt="Mari" class="user-avatar">
+            <div class="user-info">
+              <strong>Mari Vieira:</strong>
+              <span>Há 11 minutos</span>
+            </div>
+          </div>
+          <p>Eu não tenho muito mas ajudei com o que tava no meu alcance, por que sei que o pouco pra quem precisa é muito vamos ajudar gente juntos somos fortes</p>
+        </div>
+
+        <div class="comment-card">
+          <div class="comment-header">
+            <img src="img/feed back homem 60 anos.jpg" alt="Felipe" class="user-avatar">
+            <div class="user-info">
+              <strong>Felipe Nunes:</strong>
+              <span>Há 15 minutos</span>
+            </div>
+          </div>
+          <p>Ajudei a Laura, eu chorei vendo o vídeo dela, alguns falam que homem não chora mas eu chorei</p>
+        </div>
+
+      </div>
+      
+    </div>
+
+    <footer>
+      <p class="footer-links">
+        <a href="#">Políticas de Privacidade</a> | <a href="#">Termos de Uso</a>
+      </p>
+      <p class="copyright-line">Todos os direitos reservados</p>
+    </footer>
+
+  </div>
+
+  <div id="h0" class="modal-layer">
+    <div class="modal-box">
+      
+      <button id="h1" class="close-circle">×</button>
+      
+      <!-- Formulário de Leads (Captura de dados) -->
+      <div id="hForm" style="display: block;">
+        <p class="nP">Sua ajuda significa o mundo! ❤️</p>
+        <h3 class="modal-heading" style="margin-bottom: 20px;">INFORME SEUS DADOS</h3>
+        
+        <div style="margin-bottom: 12px; text-align: left;">
+          <label style="font-size: 13px; font-weight: bold; color: #555; display: block; margin-bottom: 5px; font-family: 'Nunito', sans-serif;">Nome Completo</label>
+          <input type="text" id="donor-name" placeholder="Ex: João Silva" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: 'Nunito', sans-serif;">
+        </div>
+
+        <div style="margin-bottom: 12px; text-align: left;">
+          <label style="font-size: 13px; font-weight: bold; color: #555; display: block; margin-bottom: 5px; font-family: 'Nunito', sans-serif;">CPF (Para emissão do PIX)</label>
+          <input type="text" id="donor-cpf" placeholder="000.000.000-00" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: 'Nunito', sans-serif;">
+        </div>
+
+        <div style="margin-bottom: 20px; text-align: left;">
+          <label style="font-size: 13px; font-weight: bold; color: #555; display: block; margin-bottom: 5px; font-family: 'Nunito', sans-serif;">WhatsApp / Celular</label>
+          <input type="text" id="donor-phone" placeholder="(00) 90000-0000" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: 'Nunito', sans-serif;">
+        </div>
+
+        <p id="lead-error-msg" style="color: #d32f2f; font-size: 13px; margin-bottom: 15px; font-weight: 700; text-align: center; display: none; font-family: 'Nunito', sans-serif;"></p>
+
+        <button id="btn-generate-pix" class="vK" style="width: 100%; min-height: unset; height: 50px; font-size: 16px; border-radius: 8px;">GERAR PIX AGORA</button>
+      </div>
+
+      <div id="h2" style="display:none;">
+        <p class="nP">Sua ajuda significa o mundo! ❤️</p>
+        
+        <h3 class="modal-heading">PIX GERADO</h3>
+
+        <p id="hA" style="text-align:center;font-size:1.4rem;font-weight:bold;color:#1a7a4a;margin:0 0 10px;"></p>
+
+        <p id="hS" style="display:none;margin:0 0 10px;padding:8px 12px;background:#fff3cd;color:#856404;border-radius:6px;font-size:0.85rem;text-align:center;border:1px solid #ffc107;"></p>
+        
+        <div id="h3"></div>
+        
+        <textarea id="h4" readonly placeholder="Gerando código PIX..."></textarea>
+        
+        <p class="info-redirect">Após efetuar o pagamento, você será redirecionado automaticamente</p>
+        
+        <button id="h5">📋 COPIAR CÓDIGO</button>
+        
+        <div class="pix-countdown" id="h6">30:00</div>
+        
+        <div class="pix-steps">
+          <div class="step-row">
+            <span class="step-icon">☑️</span>
+            <span>Copie o código acima</span>
+          </div>
+          <div class="step-row">
+            <span class="step-icon">📱</span>
+            <span>Abra seu aplicativo bancário e selecione a opção PIX Copia e Cola</span>
+          </div>
+          <div class="step-row">
+            <span class="step-icon">⏱️</span>
+            <span>Cole o código e conclua o pagamento</span>
+          </div>
+          <div class="step-row">
+            <span class="step-icon">✓</span>
+            <span>Alguns segundos após o pagamento, a confirmação chega pra gente!</span>
+          </div>
+        </div>
+      </div>
+      
+      <div id="h7" class="success-panel" style="display:none;">
+        <div class="check-circle">✓</div>
+        <h3 class="success-title">Pagamento Confirmado!</h3>
+        <p class="success-subtitle">Muito obrigado pela sua contribuição!</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="h9" class="float-alert"></div>
+
+  <script>
+  const _n0 = [
+    "Ana Paula",
+    "Carlos Silva",
+    "Fernanda Costa",
+    "João Pedro",
+    "Patrícia Lima",
+    "Marcos Oliveira",
+    "Luciana Santos",
+    "Ricardo Souza",
+    "Juliana Martins",
+    "Roberto Alves",
+    "Bianca Rodrigues",
+    "Gabriel Pereira",
+    "Camila Ferreira",
+    "Vinícius Gomes",
+    "Larissa Dias",
+    "Daniel Carvalho",
+    "Raquel Mendes",
+    "André Barbosa",
+    "Paula Ribeiro",
+    "Felipe Araújo"
+  ];
+
+  const _n1 = [30, 40, 50, 70, 100, 150, 200, 300, 500, 750, 1000];
+
+  const _n2 = "a Laura";
+
+  function _n3() {
+    const picked = _n0[Math.floor(Math.random() * _n0.length)];
+    const val = _n1[Math.floor(Math.random() * _n1.length)];
+    const msg = `💗 ${picked} acabou de doar R$${val} para ajudar ${_n2} 🙏`;
+    
+    const box = document.getElementById('h9');
+    box.textContent = msg;
+    box.style.display = 'block';
+    
+    setTimeout(() => {
+      box.style.display = 'none';
+    }, 6000);
+  }
+
+  setTimeout(_n3, 10000);
+  setInterval(_n3, 30000);
+  </script>
+
+  <script src="vendor/qrcode.min.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

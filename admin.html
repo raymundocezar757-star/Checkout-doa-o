@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - Campanha Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00B9FF;
+      --primary-hover: #00A3E6;
+      --success: #18AF56;
+      --warning: #FFC107;
+      --danger: #F44336;
+      --background: #f4f7f6;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+      --text-muted: #7f8c8d;
+      --border: #e2e8f0;
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Auth Screen */
+    #auth-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .auth-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .auth-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 20px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .error-text {
+      color: var(--danger);
+      font-size: 13px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      display: none;
+    }
+
+    /* Dashboard Layout */
+    #dashboard-screen {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logout-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      transition: background 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: #f1f5f9;
+    }
+
+    /* Main Container */
+    .dashboard-container {
+      display: flex;
+      flex: 1;
+      padding: 40px;
+      gap: 30px;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .nav-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-tab.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .nav-tab:hover:not(.active) {
+      background: #e2e8f0;
+      color: var(--text);
+    }
+
+    /* Content Area */
+    .content-area {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    /* Orders Table */
+    .table-container {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background-color: #f8fafc;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-badge.pending {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .status-badge.paid {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    /* Action Buttons in Table */
+    .action-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .recovery-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.2s;
+    }
+
+    .recovery-btn.pix-recover {
+      background: #0077b6;
+    }
+
+    .recovery-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Settings Form Grid */
+    .settings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .form-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: -4px;
+    }
+
+    textarea.input-field {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .save-alert {
+      background: #dcfce7;
+      color: #15803d;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .dashboard-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+      
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+
+      .settings-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Auth Screen -->
+  <div id="auth-screen">
+    <div class="auth-card">
+      <h2 class="auth-title">Painel de Controle</h2>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Insira a senha administrativa para acessar</p>
+      <p id="login-error" class="error-text">Senha incorreta.</p>
+      <input type="password" id="admin-pass" class="input-field" placeholder="Digite sua senha...">
+      <button id="login-btn" class="btn">ACESSAR PAINEL</button>
+    </div>
+  </div>
+
+  <!-- Dashboard Screen -->
+  <div id="dashboard-screen">
+    <header>
+      <div class="logo-container">
+        <h1>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Painel de Recuperação
+        </h1>
+      </div>
+      <div class="header-actions">
+        <button id="logout-btn" class="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <div class="dashboard-container">
+      <!-- Sidebar Tabs Navigation -->
+      <div class="sidebar">
+        <button class="nav-tab active" data-tab="pedidos-tab">
+          📁 Pedidos & Leads
+        </button>
+        <button class="nav-tab" data-tab="config-tab">
+          ⚙️ Integração & Pixel
+        </button>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        
+        <!-- Tab 1: Orders -->
+        <div id="pedidos-tab" class="tab-content active">
+          <h2 class="tab-title">Todos os Pedidos Gerados</h2>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Doador</th>
+                  <th>Telefone</th>
+                  <th>CPF</th>
+                  <th>Valor</th>
+                  <th>Status</th>
+                  <th>UTMs</th>
+                  <th>Recuperação WhatsApp</th>
+                </tr>
+              </thead>
+              <tbody id="orders-list">
+                <tr>
+                  <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">Carregando pedidos...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Settings -->
+        <div id="config-tab" class="tab-content">
+          <h2 class="tab-title">Configurações Gerais</h2>
+          
+          <div id="save-alert" class="save-alert">Configurações salvas com sucesso!</div>
+
+          <form id="settings-form">
+            <div class="settings-grid">
+              
+              <!-- Payshark Public Key -->
+              <div class="form-group">
+                <label for="payshark_public_key">PayShark Public Key</label>
+                <span class="form-desc">Chave Pública de Integração da Payshark.</span>
+                <input type="text" id="payshark_public_key" class="input-field" placeholder="Ex: pk_...">
+              </div>
+
+              <!-- Payshark Secret Key -->
+              <div class="form-group">
+                <label for="payshark_secret_key">PayShark Secret Key</label>
+                <span class="form-desc">Chave Secreta de API da Payshark.</span>
+                <input type="password" id="payshark_secret_key" class="input-field" placeholder="Ex: sk_...">
+              </div>
+
+              <!-- Payshark API Host -->
+              <div class="form-group">
+                <label for="payshark_api_host">PayShark API Host</label>
+                <span class="form-desc">Endereço de Host da API (geralmente api.shieldtecnologia.com).</span>
+                <input type="text" id="payshark_api_host" class="input-field" placeholder="api.shieldtecnologia.com">
+              </div>
+
+              <!-- Facebook Pixel ID -->
+              <div class="form-group">
+                <label for="fb_pixel_id">Facebook Pixel ID</label>
+                <span class="form-desc">Código identificador de rastreamento do Facebook Ads.</span>
+                <input type="text" id="fb_pixel_id" class="input-field" placeholder="Ex: 1234567890">
+              </div>
+
+              <!-- Recovery Template 1 (WhatsApp) -->
+              <div class="form-group full-width">
+                <label for="wa_template_cobrança">WhatsApp: Template de Cobrança / Convite</label>
+                <span class="form-desc">Variáveis suportadas: <strong>{nome}</strong>, <strong>{valor}</strong>.</span>
+                <textarea id="wa_template_cobrança" class="input-field" placeholder="Digite a mensagem..."></textarea>
+              </div>
+
+              <!-- Recovery Template 2 (WhatsApp + PIX Code) -->
+              <div class="form-group full-width">
+                <label for="wa_template_copia_cola">WhatsApp: Template de Envio do PIX Copia e Cola</label>
+                <span class="form-desc">Variáveis suportadas: <strong>{nome}</strong>, <strong>{valor}</strong>, <strong>{pix_code}</strong>.</span>
+                <textarea id="wa_template_copia_cola" class="input-field" placeholder="Digite a mensagem..."></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn" style="margin-top: 30px; max-width: 200px;">SALVAR CONFIGURAÇÕES</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

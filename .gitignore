@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+.netlify/
+
+# Local database and environment variables
+.env
+mock_db.json
+
+# IDEs and OS files
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
