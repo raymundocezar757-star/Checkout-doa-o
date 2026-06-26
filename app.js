@@ -51,7 +51,7 @@
     
     // Wrapper for Facebook Pixel event tracking
     trackEvent(name, data) {
-      if (window.fbq && SYS.pixelId) {
+      if (window.fbq) {
         try {
           if (data) {
             fbq('track', name, data);
