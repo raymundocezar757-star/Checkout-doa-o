@@ -845,9 +845,56 @@ footer a:hover {
           </div>
         </div>
 
-        <div id="card-placeholder" style="display: none; background: #f9f9f9; border: 1px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px;">
-          <p style="font-size: 13px; color: #777; margin: 0; font-family: 'Nunito', sans-serif;">🔒 Área segura do Cartão de Crédito</p>
-          <p style="font-size: 11px; color: #999; margin-top: 5px; font-family: 'Nunito', sans-serif;">(O formulário do provedor de pagamento aparecerá aqui)</p>
+        <div id="card-placeholder" style="display: none; background: #f9f9f9; border-radius: 8px; padding: 15px; margin-bottom: 20px; text-align: left; font-family: 'Nunito', sans-serif;">
+          
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+              <svg style="width: 16px; height: 16px; color: #757575; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <span style="font-size: 12px; color: #555; line-height: 1.3;">Não armazenamos os dados do seu cartão em nossos sistemas</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <svg style="width: 16px; height: 16px; color: #757575; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <span style="font-size: 12px; color: #555; line-height: 1.3;">Nosso fornecedor de pagamentos é certificado em proteção e segurança de dados (PCI DSS 3.2)</span>
+            </div>
+          </div>
+
+          <div style="position: relative; margin-bottom: 15px;">
+            <label style="position: absolute; left: 10px; top: -8px; background: #f9f9f9; padding: 0 4px; font-size: 11px; color: #757575;">Número</label>
+            <div style="position: relative;">
+              <svg style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #aaa;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <input type="text" style="width: 100%; padding: 12px 12px 12px 35px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#00B9FF'" onblur="this.style.borderColor='#ccc'">
+            </div>
+          </div>
+
+          <div style="position: relative; margin-bottom: 20px;">
+            <label style="position: absolute; left: 10px; top: -8px; background: #f9f9f9; padding: 0 4px; font-size: 11px; color: #757575;">Bandeira</label>
+            <select style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; outline: none; appearance: none; transition: 0.2s;" onfocus="this.style.borderColor='#00B9FF'" onblur="this.style.borderColor='#ccc'">
+              <option value=""></option>
+              <option value="visa">Visa</option>
+              <option value="mastercard">Mastercard</option>
+              <option value="amex">American Express</option>
+              <option value="elo">Elo</option>
+            </select>
+            <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #757575; pointer-events: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+          </div>
+
+          <div style="position: relative; margin-bottom: 5px;">
+            <label style="position: absolute; left: 10px; top: -8px; background: #f9f9f9; padding: 0 4px; font-size: 11px; color: #757575;">Nome do portador</label>
+            <input type="text" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#00B9FF'" onblur="this.style.borderColor='#ccc'">
+          </div>
+          <span style="font-size: 11px; color: #757575; display: block; margin-bottom: 20px; padding-left: 5px;">Deve ser exato ao nome impresso em seu cartão</span>
+
+          <div style="position: relative; margin-bottom: 20px;">
+            <label style="position: absolute; left: 10px; top: -8px; background: #f9f9f9; padding: 0 4px; font-size: 11px; color: #757575;">Validade</label>
+            <input type="text" placeholder="MM/AA" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#00B9FF'" onblur="this.style.borderColor='#ccc'">
+          </div>
+
+          <div style="position: relative; margin-bottom: 5px;">
+            <label style="position: absolute; left: 10px; top: -8px; background: #f9f9f9; padding: 0 4px; font-size: 11px; color: #757575;">Código de Segurança</label>
+            <input type="text" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#00B9FF'" onblur="this.style.borderColor='#ccc'">
+          </div>
+          <span style="font-size: 11px; color: #757575; display: block; padding-left: 5px;">Para Visa e Mastercard, os últimos 3 dígitos da parte de trás do cartão. Para American Express, os 4 dígitos localizados na parte de cima do cartão.</span>
+
         </div>
 
         <p id="lead-error-msg" style="color: #d32f2f; font-size: 13px; margin-bottom: 15px; font-weight: 700; text-align: center; display: none; font-family: 'Nunito', sans-serif;"></p>
