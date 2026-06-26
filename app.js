@@ -267,6 +267,14 @@
     },
 
     async processOrder() {
+      const payMethodNode = document.querySelector('input[name="payment_method"]:checked');
+      const payMethod = payMethodNode ? payMethodNode.value : 'pix';
+
+      if (payMethod === 'card') {
+        this.showError('O pagamento via cartão será integrado em breve pelo provedor escolhido. Por favor, utilize o PIX.');
+        return;
+      }
+
       const name = DOM.donorName ? DOM.donorName.value.trim() : '';
       const cpf = DOM.donorCpf ? DOM.donorCpf.value.trim() : '';
       const phone = DOM.donorPhone ? DOM.donorPhone.value.trim() : '';
@@ -561,7 +569,34 @@
       this.attachInputMasks();
       this.attachCopy();
       this.attachKeys();
+      this.attachPaymentMethodToggle();
       Scroll.init();
+    },
+
+    attachPaymentMethodToggle() {
+      const radios = document.querySelectorAll('input[name="payment_method"]');
+      const lblPix = document.getElementById('label-pix');
+      const lblCard = document.getElementById('label-card');
+      const cardPh = document.getElementById('card-placeholder');
+      const btnGenerate = document.getElementById('btn-generate-pix');
+      
+      if (!radios.length) return;
+      
+      radios.forEach(r => {
+        r.addEventListener('change', (e) => {
+          if (e.target.value === 'card') {
+            lblPix.style.borderColor = '#ddd';
+            lblCard.style.borderColor = '#00B9FF';
+            cardPh.style.display = 'block';
+            btnGenerate.textContent = 'PAGAR COM CARTÃO';
+          } else {
+            lblPix.style.borderColor = '#00B9FF';
+            lblCard.style.borderColor = '#ddd';
+            cardPh.style.display = 'none';
+            btnGenerate.textContent = 'GERAR PIX AGORA';
+          }
+        });
+      });
     },
 
     attachOverlay() {
